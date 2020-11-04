@@ -1,0 +1,12 @@
+[Unit]
+Description=CPU based Fan Control Service
+After=multi-user.target
+[Service]
+WorkingDirectory=/root/IPMI-Controller
+User=root
+Type=idle
+ExecStart=/usr/bin/python3 /root/IPMI-Controller/IPMI-Controller.py &> /dev/null
+ExecStop= /usr/bin/ipmitool raw 0x30 0x30 0x01 0x01
+Restart=always
+[Install]
+WantedBy=multi-user.target
