@@ -3,7 +3,7 @@
 #install dependencies
 apt update
 
-apt install python3 python3-pip lm-sensors -y
+apt install python3 python3-pip lm-sensors ipmitool -y
 pip3 install pysensors elevate
 
 mkdir -p /root/IPMI-Controller
